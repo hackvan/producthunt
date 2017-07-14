@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :products
+  # resources :products, only: [:index]
+  # resources :products, except: [:index, :create, :new]
   root 'products#index'
   # get    '/products',          to: 'products#index'
   # get    '/products/new',      to: 'products#new', as: 'new_product'
