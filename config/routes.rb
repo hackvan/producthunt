@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users, only: [:new, :create]
   resources :products
   # resources :products, only: [:index]
   # resources :products, except: [:index, :create, :new]
