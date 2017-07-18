@@ -11,14 +11,6 @@ class ApplicationController < ActionController::Base
     @current_user = nil
   end
 
-  def private_access
-    redirect_to :login unless signed_in?
-  end
-
-  def public_access
-    redirect_to root_path if signed_in?
-  end
-  
   private
     def signed_in?
       !current_user.nil?
@@ -31,4 +23,11 @@ class ApplicationController < ActionController::Base
     end
     helper_method :current_user
 
+    def private_access
+      redirect_to :login unless signed_in?
+    end
+
+    def public_access
+      redirect_to root_path if signed_in?
+    end
 end
