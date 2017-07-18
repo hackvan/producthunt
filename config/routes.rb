@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  root 'products#index'
+
+  get  'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+
   resources :users, only: [:new, :create]
   resources :products
-  # resources :products, only: [:index]
-  # resources :products, except: [:index, :create, :new]
-  root 'products#index'
+
   # resources :products, only: [:index]
   # resources :products, except: [:index, :create, :new]
   # get    '/products',          to: 'products#index'
