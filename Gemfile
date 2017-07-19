@@ -36,6 +36,8 @@ gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 gem 'xmlrpc'
 gem 'gravatar-ultimate'
 
+gem 'annotate'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
