@@ -20,6 +20,7 @@
 
         <div class="comments">
           <h2>Comentarios</h2>
+
           <% @product.comments.each do |comment| %>
             <div class="panel panel-default">
               <header class="panel-heading"><img src="<%= Gravatar.new("#{comment.user.email}").image_url %>" class="img-circle" /> <%= comment.user.name %></header>
@@ -32,7 +33,6 @@
               <div class="form-group">
                 <%= f.text_area :body, class: "form-control", placeholder: "Agregar comentario" %>
               </div>
-
               <div class="actions text-right">
                 <%= f.submit "Comentar", class: "btn btn-primary" %>
               </div>
