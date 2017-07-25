@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'votes/create'
+
+  get 'votes/destroy'
+
   root 'products#index'
 
   get    'login', to: 'sessions#new'
@@ -8,6 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   resources :products do
+    resource  :vote, only: [:create, :destroy]
     resources :comments, only: [:create]
   end
 

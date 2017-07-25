@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724190237) do
+ActiveRecord::Schema.define(version: 20170725181601) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 20170724190237) do
     t.string "twitter_handle", limit: 50
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_votes_on_product_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
 end
