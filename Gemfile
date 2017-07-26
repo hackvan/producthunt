@@ -40,6 +40,7 @@ gem 'annotate'
 
 # Handle upload files
 gem "paperclip", "~> 5.1.0"
+gem 'aws-sdk', '~> 2.3'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
